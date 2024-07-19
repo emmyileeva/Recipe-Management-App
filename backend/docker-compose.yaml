@@ -1,0 +1,43 @@
+services:
+
+  backend-api.local:
+    container_name: backend-api.local
+    env_file: .env.local
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - '8000:8000'
+    volumes:
+      - '.:/code'
+    depends_on:
+      db.local:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  db.local:
+    image: postgres
+    restart: unless-stopped
+    container_name: db.local
+    env_file:
+      - .env.local
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+      - POSTGRES_HOST=db.local
+      - WAIT_HOSTS=db.local:5432
+    ports:
+      - '5432:5432'
+    healthcheck :
+      test: [ "CMD", "pg_isready", "-q", "-d", 'postgres', "-U", 'postgres' ]
+      interval : 5s
+      timeout : 5s
+      retries : 5
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

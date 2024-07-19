@@ -1,0 +1,117 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.card-header {
+  color: #fff;
+  padding: 10px 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+textarea.form-control {
+  height: 80px;
+}
+
+.form-control-file {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.invalid-feedback {
+  display: none;
+  color: red;
+  font-size: 0.875rem;
+}
+
+.was-validated .form-control:invalid ~ .invalid-feedback {
+  display: block;
+}
+
+.instruction-group {
+  margin-bottom: 0.5rem;
+}
+
+.instruction-group textarea {
+  margin-bottom: 0.5rem;
+}
+
+.ingredient-group {
+  margin-bottom: 0.5rem;
+}
+
+.ingredient-group input {
+  margin-top: 0.5rem;
+}
+
+small.form-text {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.back-button {
+  font-size: 0.9rem;
+  color: #6c757d;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+  color: #495057;
+}
